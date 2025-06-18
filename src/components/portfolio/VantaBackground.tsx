@@ -3,7 +3,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import TOPOLOGY from 'vanta/dist/vanta.topology.min';
-import * as THREE from 'three';
+// Removed: import * as THREE from 'three';
 
 interface VantaBackgroundProps {
   children: React.ReactNode;
@@ -16,7 +16,6 @@ function parseHslString(hslString: string): [number, number, number] {
   const s = parseFloat(parts[1].replace('%', ''));
   const l = parseFloat(parts[2].replace('%', ''));
   if (isNaN(h) || isNaN(s) || isNaN(l)) {
-    // Fallback to a default if parsing fails, to prevent crashes
     console.error(`Invalid HSL string: ${hslString}, using default.`);
     return [240, 60, 50]; // Default to a darker soft lavender
   }
@@ -46,7 +45,7 @@ const VantaBackground: React.FC<VantaBackgroundProps> = ({ children }) => {
     if (typeof window !== 'undefined' && !vantaEffect && vantaRef.current) {
       const computedStyle = getComputedStyle(document.documentElement);
       
-      let primaryColorHex = 0x7A63FF; // Default: Adjusted primary (darker lavender)
+      let primaryColorHex = 0x7A63FF; 
       try {
         const primaryHslString = computedStyle.getPropertyValue('--primary').trim();
         if (primaryHslString) {
@@ -57,7 +56,7 @@ const VantaBackground: React.FC<VantaBackgroundProps> = ({ children }) => {
         console.error("Failed to parse primary color for Vanta, using default.", e);
       }
 
-      let backgroundColorHex = 0xF5F5F5; // Default: Light Gray #F5F5F5
+      let backgroundColorHex = 0xF5F5F5; 
       try {
         const backgroundHslString = computedStyle.getPropertyValue('--background').trim();
         if (backgroundHslString) {
