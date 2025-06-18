@@ -2,7 +2,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
-import NET from 'vanta/dist/vanta.net.min';
+import GLOBE from 'vanta/dist/vanta.globe.min'; // Changed from NET
 import * as THREE from 'three';
 
 interface VantaBackgroundProps {
@@ -16,7 +16,9 @@ function parseHslString(hslString: string): [number, number, number] {
   const s = parseFloat(parts[1].replace('%', ''));
   const l = parseFloat(parts[2].replace('%', ''));
   if (isNaN(h) || isNaN(s) || isNaN(l)) {
-    throw new Error(`Invalid HSL string: ${hslString}`);
+    // Fallback to a default if parsing fails, to prevent crashes
+    console.error(`Invalid HSL string: ${hslString}, using default.`);
+    return [240, 60, 70]; // Default to soft lavender
   }
   return [h, s, l];
 }
@@ -28,7 +30,9 @@ function hslToHexNumber(h: number, s: number, l: number): number {
   const f = (n: number) => {
     const k = (n + h / 30) % 12;
     const colorValue = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
-    return Math.round(255 * colorValue).toString(16).padStart(2, '0');
+    // Ensure colorValue is within [0, 1] range
+    const clampedColorValue = Math.max(0, Math.min(1, colorValue));
+    return Math.round(255 * clampedColorValue).toString(16).padStart(2, '0');
   };
   const hexString = `0x${f(0)}${f(8)}${f(4)}`;
   return parseInt(hexString);
@@ -42,7 +46,7 @@ const VantaBackground: React.FC<VantaBackgroundProps> = ({ children }) => {
     if (typeof window !== 'undefined' && !vantaEffect && vantaRef.current) {
       const computedStyle = getComputedStyle(document.documentElement);
       
-      let primaryColorHex = 0xdbd9fa; // Default Soft Lavender
+      let primaryColorHex = 0xAEADD3; // Default: Updated Soft Lavender (darker)
       try {
         const primaryHslString = computedStyle.getPropertyValue('--primary').trim();
         if (primaryHslString) {
@@ -53,7 +57,18 @@ const VantaBackground: React.FC<VantaBackgroundProps> = ({ children }) => {
         console.error("Failed to parse primary color for Vanta, using default.", e);
       }
 
-      let backgroundColorHex = 0xf5f5f5; // Default Light Gray
+      let accentColorHex = 0xFFD1DC; // Default: Pale Pink
+      try {
+        const accentHslString = computedStyle.getPropertyValue('--accent').trim();
+        if (accentHslString) {
+          const [h, s, l] = parseHslString(accentHslString);
+          accentColorHex = hslToHexNumber(h, s, l);
+        }
+      } catch (e) {
+        console.error("Failed to parse accent color for Vanta, using default.", e);
+      }
+
+      let backgroundColorHex = 0xF5F5F5; // Default: Light Gray
       try {
         const backgroundHslString = computedStyle.getPropertyValue('--background').trim();
         if (backgroundHslString) {
@@ -64,9 +79,9 @@ const VantaBackground: React.FC<VantaBackgroundProps> = ({ children }) => {
         console.error("Failed to parse background color for Vanta, using default.", e);
       }
       
-      const effect = NET({
+      const effect = GLOBE({ // Changed from NET
         el: vantaRef.current,
-        THREE: THREE, // Explicitly pass the THREE object
+        THREE: THREE,
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
@@ -74,11 +89,10 @@ const VantaBackground: React.FC<VantaBackgroundProps> = ({ children }) => {
         minWidth: 200.0,
         scale: 1.0,
         scaleMobile: 1.0,
-        color: primaryColorHex,
+        color: primaryColorHex,      // Main color of the globe
+        color2: accentColorHex,     // Secondary color of the globe
         backgroundColor: backgroundColorHex,
-        points: 10.00,
-        maxDistance: 20.00,
-        spacing: 15.00
+        size: 1.0 // Adjust size as needed, 1.0 is a good starting point
       });
       setVantaEffect(effect);
     }
@@ -89,7 +103,7 @@ const VantaBackground: React.FC<VantaBackgroundProps> = ({ children }) => {
         setVantaEffect(null);
       }
     };
-  }, [vantaEffect]); // Dependency array includes vantaEffect to manage its lifecycle
+  }, [vantaEffect]);
 
   return (
     <div ref={vantaRef} className="relative w-full h-full">
