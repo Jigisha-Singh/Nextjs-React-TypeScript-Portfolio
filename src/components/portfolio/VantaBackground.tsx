@@ -2,8 +2,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
-import CELLS from 'vanta/dist/vanta.cells.min';
-import * as THREE from 'three'; // Re-added import
+import GLOBE from 'vanta/dist/vanta.globe.min';
+import * as THREE from 'three';
 import type { VantaBase } from 'vanta/dist/vanta.base';
 
 interface VantaBackgroundProps {
@@ -51,7 +51,7 @@ const VantaBackground: React.FC<VantaBackgroundProps> = ({ children }) => {
   const [vantaEffect, setVantaEffect] = useState<VantaBase | null>(null);
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && !vantaEffect && vantaRef.current && CELLS) {
+    if (typeof window !== 'undefined' && !vantaEffect && vantaRef.current && GLOBE) {
       const computedStyle = getComputedStyle(document.documentElement);
       
       let primaryColorHex = 0xA99AFF; 
@@ -60,7 +60,7 @@ const VantaBackground: React.FC<VantaBackgroundProps> = ({ children }) => {
       if (primaryHslValues) {
         primaryColorHex = hslToHexNumber(...primaryHslValues);
       } else {
-        console.error("Failed to parse primary color for Vanta CELLS, using default.", primaryHslString);
+        console.error("Failed to parse primary color for Vanta GLOBE, using default.", primaryHslString);
       }
 
       let accentColorHex = 0xFFD1DC; 
@@ -69,21 +69,21 @@ const VantaBackground: React.FC<VantaBackgroundProps> = ({ children }) => {
       if (accentHslValues) {
         accentColorHex = hslToHexNumber(...accentHslValues);
       } else {
-        console.error("Failed to parse accent color for Vanta CELLS, using default.", accentHslString);
+        console.error("Failed to parse accent color for Vanta GLOBE, using default.", accentHslString);
       }
       
-      let backgroundColorHex = 0xF5F5F5;
+      let backgroundColorHex = 0xFFFFFF; // Default to white
       const backgroundHslString = computedStyle.getPropertyValue('--background').trim();
       const backgroundHslValues = parseHslString(backgroundHslString);
       if (backgroundHslValues) {
         backgroundColorHex = hslToHexNumber(...backgroundHslValues);
       } else {
-        console.error("Failed to parse background color for Vanta CELLS, using default.", backgroundHslString);
+        console.error("Failed to parse background color for Vanta GLOBE, using default.", backgroundHslString);
       }
       
-      const effect = CELLS({ 
+      const effect = GLOBE({ 
         el: vantaRef.current,
-        THREE: THREE, // Explicitly pass THREE.js
+        THREE: THREE, 
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
@@ -91,11 +91,10 @@ const VantaBackground: React.FC<VantaBackgroundProps> = ({ children }) => {
         minWidth: 200.0,
         scale: 1.0,
         scaleMobile: 1.0,
-        color1: primaryColorHex,
-        color2: accentColorHex,
-        backgroundColor: backgroundColorHex, // Added this based on CELLS effect options
-        size: 3.00, // Example: Adjust size as needed for CELLS
-        speed: 1.00, // Example: Adjust speed as needed for CELLS
+        color: primaryColorHex,      // For GLOBE effect
+        color2: accentColorHex,     // For GLOBE effect
+        backgroundColor: backgroundColorHex,
+        size: 1.0, // Default for GLOBE, adjust as needed
       });
       setVantaEffect(effect);
     }
