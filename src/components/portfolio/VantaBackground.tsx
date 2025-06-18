@@ -81,16 +81,26 @@ const VantaBackground: React.FC<VantaBackgroundProps> = ({ children }) => {
         console.error("Failed to parse background color for Vanta GLOBE, using default.", backgroundHslString);
       }
       
+<<<<<<< HEAD
       const effect = GLOBE({
         el: vantaRef.current,
         THREE: THREE,
+=======
+      const effect = GLOBE({ 
+        el: vantaRef.current,
+        THREE: THREE, 
+>>>>>>> 97b5ad1 (I see this error with the app, reported by NextJS, please fix it. The er)
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
         minHeight: 200.0,
         minWidth: 200.0,
         scale: 1.0,
+<<<<<<< HEAD
         scaleMobile: 1.0,        
+=======
+        scaleMobile: 1.0,
+>>>>>>> 97b5ad1 (I see this error with the app, reported by NextJS, please fix it. The er)
         color: primaryColorHex,      // For GLOBE effect
         color2: accentColorHex,     // For GLOBE effect
         backgroundColor: backgroundColorHex,
