@@ -2,7 +2,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
-import TOPOLOGY from 'vanta/dist/vanta.topology.min'; // Changed from GLOBE
+import TOPOLOGY from 'vanta/dist/vanta.topology.min';
 import * as THREE from 'three';
 
 interface VantaBackgroundProps {
@@ -46,7 +46,7 @@ const VantaBackground: React.FC<VantaBackgroundProps> = ({ children }) => {
     if (typeof window !== 'undefined' && !vantaEffect && vantaRef.current) {
       const computedStyle = getComputedStyle(document.documentElement);
       
-      let primaryColorHex = 0x8A8AFF; // Default: Darker Soft Lavender
+      let primaryColorHex = 0x7A63FF; // Default: Adjusted primary (darker lavender)
       try {
         const primaryHslString = computedStyle.getPropertyValue('--primary').trim();
         if (primaryHslString) {
@@ -57,7 +57,7 @@ const VantaBackground: React.FC<VantaBackgroundProps> = ({ children }) => {
         console.error("Failed to parse primary color for Vanta, using default.", e);
       }
 
-      let backgroundColorHex = 0xF5F5F5; // Default: Light Gray
+      let backgroundColorHex = 0xF5F5F5; // Default: Light Gray #F5F5F5
       try {
         const backgroundHslString = computedStyle.getPropertyValue('--background').trim();
         if (backgroundHslString) {
@@ -70,7 +70,7 @@ const VantaBackground: React.FC<VantaBackgroundProps> = ({ children }) => {
       
       const effect = TOPOLOGY({ 
         el: vantaRef.current,
-        THREE: THREE,
+        // THREE: THREE, // Removed to let Vanta use its bundled THREE.js
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
