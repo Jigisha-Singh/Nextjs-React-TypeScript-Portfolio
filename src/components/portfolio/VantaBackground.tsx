@@ -2,7 +2,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
-import GLOBE from 'vanta/dist/vanta.globe.min'; // Changed from NET
+import TOPOLOGY from 'vanta/dist/vanta.topology.min'; // Changed from GLOBE
 import * as THREE from 'three';
 
 interface VantaBackgroundProps {
@@ -18,7 +18,7 @@ function parseHslString(hslString: string): [number, number, number] {
   if (isNaN(h) || isNaN(s) || isNaN(l)) {
     // Fallback to a default if parsing fails, to prevent crashes
     console.error(`Invalid HSL string: ${hslString}, using default.`);
-    return [240, 60, 70]; // Default to soft lavender
+    return [240, 60, 50]; // Default to a darker soft lavender
   }
   return [h, s, l];
 }
@@ -46,7 +46,7 @@ const VantaBackground: React.FC<VantaBackgroundProps> = ({ children }) => {
     if (typeof window !== 'undefined' && !vantaEffect && vantaRef.current) {
       const computedStyle = getComputedStyle(document.documentElement);
       
-      let primaryColorHex = 0xAEADD3; // Default: Updated Soft Lavender (darker)
+      let primaryColorHex = 0x8A8AFF; // Default: Darker Soft Lavender
       try {
         const primaryHslString = computedStyle.getPropertyValue('--primary').trim();
         if (primaryHslString) {
@@ -55,17 +55,6 @@ const VantaBackground: React.FC<VantaBackgroundProps> = ({ children }) => {
         }
       } catch (e) {
         console.error("Failed to parse primary color for Vanta, using default.", e);
-      }
-
-      let accentColorHex = 0xFFD1DC; // Default: Pale Pink
-      try {
-        const accentHslString = computedStyle.getPropertyValue('--accent').trim();
-        if (accentHslString) {
-          const [h, s, l] = parseHslString(accentHslString);
-          accentColorHex = hslToHexNumber(h, s, l);
-        }
-      } catch (e) {
-        console.error("Failed to parse accent color for Vanta, using default.", e);
       }
 
       let backgroundColorHex = 0xF5F5F5; // Default: Light Gray
@@ -79,7 +68,7 @@ const VantaBackground: React.FC<VantaBackgroundProps> = ({ children }) => {
         console.error("Failed to parse background color for Vanta, using default.", e);
       }
       
-      const effect = GLOBE({ // Changed from NET
+      const effect = TOPOLOGY({ 
         el: vantaRef.current,
         THREE: THREE,
         mouseControls: true,
@@ -89,10 +78,8 @@ const VantaBackground: React.FC<VantaBackgroundProps> = ({ children }) => {
         minWidth: 200.0,
         scale: 1.0,
         scaleMobile: 1.0,
-        color: primaryColorHex,      // Main color of the globe
-        color2: accentColorHex,     // Secondary color of the globe
+        color: primaryColorHex,
         backgroundColor: backgroundColorHex,
-        size: 1.0 // Adjust size as needed, 1.0 is a good starting point
       });
       setVantaEffect(effect);
     }
