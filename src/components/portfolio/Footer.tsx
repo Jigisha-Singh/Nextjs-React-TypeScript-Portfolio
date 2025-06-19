@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex flex-col items-center space-y-6">
           <div className="flex space-x-6">
             <a
-              href="https://linkedin.com/in/jigishasingh-placeholder"
+              href="https://www.linkedin.com/in/jigisha-singh-487186370/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Jigisha Singh on LinkedIn"
@@ -39,13 +39,12 @@ export default function Footer() {
           </p>
 
           <p className="text-xs text-foreground/60">
-            &copy; {currentYear} Jigisha Singh. Crafted with{" "}
+            &copy; {currentYear} Jigisha Singh.
+            <br/>
+             Crafted by{" "}
             <span className="text-red-500" role="img" aria-label="love">
-              ❤️
-            </span>{" "}
-            and Next.js.
-            <br />
-            Hosted on Firebase.
+              Aakashsingh Rajput
+            </span>
           </p>
         </div>
       </div>
