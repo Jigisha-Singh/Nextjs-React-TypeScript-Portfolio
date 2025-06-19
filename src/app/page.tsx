@@ -15,7 +15,7 @@ export default function PortfolioPage() {
         <HeroSection />
         <AboutSection />
         <SkillsSection />
-        <ProjectsSection />
+        {/* <ProjectsSection /> */}
         <AchievementsSection />
         <ContactSection />
       </main>

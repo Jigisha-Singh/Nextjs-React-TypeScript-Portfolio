@@ -5,22 +5,22 @@ import { Trophy, Users, Brain, Bot } from 'lucide-react';
 
 const achievements = [
   {
+    icon: <Brain className="h-6 w-6 text-blue-500" />,
+    title: 'Hi, I’m Jigisha – aka Miss Almond Brain',
+    description: 'I don’t forget things — literally anything. My friends say I’ve got almond-powered memory… and honestly, they’re not wrong. I remember events down to the timestamps 😄',
+    emoji: '🧠',
+  },
+  {
     icon: <Trophy className="h-6 w-6 text-yellow-500" />,
-    title: 'Debate Champion',
-    description: 'Winner in Inter-School Debate Competition.',
+    title: ' I Speak, Therefore I Win',
+    description: 'I’ve stood my ground (and the mic) at inter-command debates — from the Northern Command in 2019 to the Western Command in 2022. Arguing with logic is kinda my superpower.',
     emoji: '🏆',
   },
   {
     icon: <Users className="h-6 w-6 text-green-500" />,
-    title: 'Sports Star',
-    description: 'Finalist in Annual Sports Meet.',
-    emoji: '🏃‍♀️',
-  },
-  {
-    icon: <Brain className="h-6 w-6 text-blue-500" />,
-    title: 'Data Structures Pro',
-    description: 'Ranked in the Top 5% in Data Structures & Algorithms coursework.',
-    emoji: '💻',
+    title: 'Basketball Court Queen',
+    description: 'Represented in the Inter Northern Command Basketball Competition, and we didn’t just play — we brought home 2nd place.',
+    emoji: '🏀',
   },
   {
     icon: <Bot className="h-6 w-6 text-purple-500" />,

@@ -11,7 +11,7 @@ const skills = [
   },
   {
     icon: <CodeXmlIcon className="h-10 w-10 text-primary" />,
-    name: 'JavaScript (ES6+ & TypeScript)',
+    name: 'JavaScript',
     caption: 'Bringing interactivity and sleekness to the web.',
   },
   {
@@ -26,7 +26,7 @@ const skills = [
   },
   {
     icon: <GlobeIcon className="h-10 w-10 text-primary" />,
-    name: 'Web Development (HTML, CSS, React/Next.js)',
+    name: 'Web Development (HTML, CSS)',
     caption: 'Crafting responsive and user-friendly digital experiences.',
   },
   {
