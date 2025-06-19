@@ -1,4 +1,4 @@
-# **App Name**: Jigisha's Digital Canvas
+# **App Name**: Jigisha's Singh
 
 ## Core Features:
 
