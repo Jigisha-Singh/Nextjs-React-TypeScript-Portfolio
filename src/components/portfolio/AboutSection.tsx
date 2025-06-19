@@ -39,7 +39,7 @@ export default function AboutSection() {
           <Card className="group relative overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
             <CardHeader className="p-0">
               <Image
-                src="https://placehold.co/400x400.png"
+                src="/Jigisha Singh.jpg"
                 alt="Jigisha Singh"
                 width={400}
                 height={400}
