@@ -24,9 +24,9 @@ const achievements = [
   },
   {
     icon: <Bot className="h-6 w-6 text-purple-500" />,
-    title: 'Tech Contributor',
-    description: 'Key contributions to impactful tech projects like a versatile chatbot and an efficient expense tracker.',
-    emoji: '🤖',
+    title: 'Ctrl + S is My Love Language',
+    description: 'I speak Python, flirt with AI, and occasionally cheat on both with CSS. If it runs without bugs, it’s basically a miracle.',
+    emoji: '💻',
   },
 ];
 
