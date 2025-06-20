@@ -7,9 +7,9 @@ import SectionTitle from './SectionTitle';
 import { Github, Linkedin, Mail, Send } from 'lucide-react';
 
 const socialLinks = [
-  { icon: <Mail className="h-6 w-6" />, label: 'Email', href: 'mailto:jigisha.s@example.com' },
-  { icon: <Linkedin className="h-6 w-6" />, label: 'LinkedIn', href: 'https://linkedin.com/in/jigishasingh-placeholder', target: "_blank" },
-  { icon: <Github className="h-6 w-6" />, label: 'GitHub', href: 'https://github.com/jigishasingh-placeholder', target: "_blank" },
+  { icon: <Mail className="h-6 w-6" />, label: 'Email', href: 'mailto:singhjigisha1@gmail.com' },
+  { icon: <Linkedin className="h-6 w-6" />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/jigisha-singh-487186370/', target: "_blank" },
+  { icon: <Github className="h-6 w-6" />, label: 'GitHub', href: 'https://github.com/Jigisha-Singh', target: "_blank" },
 ];
 
 export default function ContactSection() {
