@@ -11,7 +11,6 @@ const socialLinks = [
   { icon: <Linkedin className="h-6 w-6" />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/jigisha-singh-487186370/', target: "_blank" },
   { icon: <Github className="h-6 w-6" />, label: 'GitHub', href: 'https://github.com/Jigisha-Singh', target: "_blank" },
 ];
-
 export default function ContactSection() {
   const handleConfetti = () => {
     confetti({
