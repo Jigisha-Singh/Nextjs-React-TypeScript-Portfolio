@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: "Jigisha's Digital Canvas",
+  title: "Jigisha Singh",
   description: 'Explore the personal portfolio of Jigisha Singh, a Computer Science student passionate about Data Science, Machine Learning, and Web Development.',
 };
 
