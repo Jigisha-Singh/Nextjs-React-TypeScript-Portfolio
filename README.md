@@ -24,7 +24,6 @@ This website is built using the following technologies:
 *   **React:** A JavaScript library for building user interfaces.
 *   **TypeScript:** A typed superset of JavaScript that improves code maintainability and reduces errors.
 *   **Tailwind CSS:** A utility-first CSS framework for rapid styling.
-*   **[Add other technologies used, e.g., Vercel for deployment, specific libraries, etc.]**
 
 ## Getting Started
 
