@@ -12,9 +12,8 @@ export default function HeroSection() {
             Jigisha Singh
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-foreground/90 sm:text-xl md:text-2xl font-body">
-            Curious Coder & Creative Thinker.
-            <br className="hidden sm:block" />
-            Turning caffeine into code and ideas into impact.
+          Powered by almonds, driven by curiosity, and fueled by debug mode.
+            <br className="hidden sm:block" />         
           </p>
           <div className="mt-10">
             <Button asChild size="lg" className="rounded-full shadow-lg hover:shadow-xl transition-shadow">

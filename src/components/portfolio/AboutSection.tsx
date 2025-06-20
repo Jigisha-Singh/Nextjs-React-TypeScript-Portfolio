@@ -20,20 +20,22 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-16 items-center">
           <div className="lg:col-span-2 space-y-6 text-lg text-foreground/80 leading-relaxed">
             <p>
-              Hey there! I'm Jigisha, an 18-year-old Computer Science & Engineering student with a 
-              burning passion for transforming data into compelling stories and abstract ideas into 
-              tangible realities. My journey in tech is fueled by a fascination with Machine Learning, 
-              Data Science, and the endless possibilities of Web Development.
+              Hey there! I'm Jigisha, an 18-year-old Computer Science and Engineering student specializing in 
+              Data Science at AMC Engineering College,Bengaluru. I’m passionate about turning raw data into real insights
+              and turning concepts into working code.
+            </p>
+             <p>
+            Whether it’s building with Python, C, or JavaScript, or crafting clean interfaces with HTML/CSS, I love
+            creating tech that makes sense and actually works. Lately, I’ve been diving into tools like Firebase, 
+            GitHub, and VS Code to turn side projects into something real-world ready.
             </p>
             <p>
-              When I'm not wrestling with algorithms or architecting innovative web solutions, you might 
-              find me exploring new technological frontiers, diving deep into complex problem-solving, or 
-              (perhaps surprisingly!) holding my own in a spirited debate. I approach life and work with 
-              politeness and an insatiable curiosity, balanced with a dash of boldness when the moment calls for it.
+            But I’m not just about code — I enjoy public speaking, teamwork, and yes, the occasional debate (with humans, 
+            not just compilers). I bring curiosity, clarity, and just enough chaos to keep things interesting.
             </p>
             <p>
-              Currently pursuing my B.E. at AMC Engineering College, I'm always eager to learn, grow, and 
-              contribute to meaningful projects.
+            Currently on the lookout for internships or collaborative projects in data analytics or development, where I 
+            can apply my skills, learn from others, and build something awesome together.
             </p>
           </div>
           <Card className="group relative overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
