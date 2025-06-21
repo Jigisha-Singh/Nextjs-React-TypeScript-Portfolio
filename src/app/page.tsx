@@ -6,7 +6,7 @@ import ProjectsSection from '@/components/portfolio/ProjectsSection';
 import AchievementsSection from '@/components/portfolio/AchievementsSection';
 import ContactSection from '@/components/portfolio/ContactSection';
 import Footer from '@/components/portfolio/Footer';
-import { Analytics } from "@vercel/analytics/react"; // ✅ Use /react, not /next
+import { Analytics } from "@vercel/analytics/react"; 
 
 export default function PortfolioPage() {
   return (
@@ -23,7 +23,7 @@ export default function PortfolioPage() {
         </main>
         <Footer />
       </div>
-      <Analytics /> {/* ✅ Now it's part of the JSX tree */}
+      <Analytics /> 
     </>
   );
 }
