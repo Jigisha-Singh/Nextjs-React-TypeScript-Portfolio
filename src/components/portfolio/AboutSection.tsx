@@ -20,7 +20,7 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-16 items-center">
           <div className="lg:col-span-2 space-y-6 text-lg text-foreground/80 leading-relaxed">
             <p>
-              Hey there! I'm Jigisha, an 18-year-old Computer Science and Engineering student specializing in 
+              Hey there! I'm Jiya, an 18-year-old Computer Science and Engineering student specializing in 
               Data Science at AMC Engineering College,Bengaluru. I’m passionate about turning raw data into real insights
               and turning concepts into working code.
             </p>
