@@ -7,7 +7,7 @@ const skills = [
   {
     icon: <CodeXmlIcon className="h-10 w-10 text-primary" />,
     name: 'Python',
-    caption: 'Fluent in Snake 🐍, from data wrangling to model building.',
+    caption: 'Fluent in Python, from data wrangling to model building.',
   },
   {
     icon: <CodeXmlIcon className="h-10 w-10 text-primary" />,
@@ -34,6 +34,28 @@ const skills = [
     name: 'Problem Solving',
     caption: 'Thriving on challenges and architecting elegant solutions.',
   },
+  {
+    icon: <LightbulbIcon className="h-10 w-10 text-primary" />,
+    name: 'Firebase',
+    caption: 'Learning abd Building real-time applications with Firebase.',
+  },
+  {
+    icon: <LightbulbIcon className="h-10 w-10 text-primary" />,
+    name: 'GitHub',
+    caption: 'Version control and collaboration made easy with GitHub.',
+  },
+  {
+    icon: <LightbulbIcon className="h-10 w-10 text-primary" />,
+    name: 'VS Code',
+    caption: 'My go-to IDE for coding adventures.',
+  },
+  {
+    icon: <LightbulbIcon className="h-10 w-10 text-primary" />,
+    name: 'SQL',
+    caption: 'Querying databases with precision and efficiency.',
+  },
+
+
 ];
 
 export default function SkillsSection() {

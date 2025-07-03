@@ -12,9 +12,9 @@ export default function Footer() {
           <p className="text-xs text-foreground/60">
             &copy; {currentYear} Jigisha Singh.
             <br/>
-             Crafted by{" "}
+             Crafted with{" "}
             <span className="text-red-500" role="img" aria-label="love">
-              Aakashsingh Rajput
+              React.js, Next.js, and Tailwind CSS
             </span>
           </p>
         </div>

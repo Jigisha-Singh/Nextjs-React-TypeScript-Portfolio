@@ -12,7 +12,7 @@ export default function HeroSection() {
             Jigisha Singh
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-foreground/90 sm:text-xl md:text-2xl font-body">
-          Powered by almonds, driven by curiosity, and fueled by debug mode.
+          A Computer Science Engineering student specializing in Data Science.
             <br className="hidden sm:block" />         
           </p>
           <div className="mt-10">
