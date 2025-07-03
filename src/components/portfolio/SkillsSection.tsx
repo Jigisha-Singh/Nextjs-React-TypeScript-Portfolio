@@ -29,11 +29,7 @@ const skills = [
     name: 'Web Development (HTML, CSS)',
     caption: 'Crafting responsive and user-friendly digital experiences.',
   },
-  {
-    icon: <LightbulbIcon className="h-10 w-10 text-primary" />,
-    name: 'Problem Solving',
-    caption: 'Thriving on challenges and architecting elegant solutions.',
-  },
+ 
   {
     icon: <LightbulbIcon className="h-10 w-10 text-primary" />,
     name: 'Firebase',
@@ -53,6 +49,11 @@ const skills = [
     icon: <LightbulbIcon className="h-10 w-10 text-primary" />,
     name: 'SQL',
     caption: 'Querying databases with precision and efficiency.',
+  },
+   {
+    icon: <LightbulbIcon className="h-10 w-10 text-primary" />,
+    name: 'Problem Solving',
+    caption: 'Thriving on challenges and architecting elegant solutions.',
   },
 
 
