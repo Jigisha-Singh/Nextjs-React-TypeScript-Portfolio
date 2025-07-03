@@ -31,11 +31,6 @@ const skills = [
   },
   {
     icon: <LightbulbIcon className="h-10 w-10 text-primary" />,
-    name: 'Problem Solving',
-    caption: 'Thriving on challenges and architecting elegant solutions.',
-  },
-  {
-    icon: <LightbulbIcon className="h-10 w-10 text-primary" />,
     name: 'Firebase',
     caption: 'Learning abd Building real-time applications with Firebase.',
   },
@@ -54,8 +49,11 @@ const skills = [
     name: 'SQL',
     caption: 'Querying databases with precision and efficiency.',
   },
-
-
+  {
+    icon: <LightbulbIcon className="h-10 w-10 text-primary" />,
+    name: 'Problem Solving',
+    caption: 'Thriving on challenges and architecting elegant solutions.',
+  },
 ];
 
 export default function SkillsSection() {
